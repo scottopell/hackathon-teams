@@ -1,0 +1,8 @@
+<div class = "internal announcement" >
+  <% if announcement.title.present? %>
+    <h4> <%= announcement.title %>
+  <% end %>
+  <div class = "announcement-body" >
+    <%= announcement.message %>
+  </div>
+</div>

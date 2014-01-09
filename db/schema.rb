@@ -11,9 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103032537) do
+ActiveRecord::Schema.define(version: 20140109212507) do
 
-  create_table "groups", force: true do |t|
+  create_table "announcements", force: true do |t|
+    t.string   "source",     default: "internal"
+    t.string   "message"
+    t.string   "title"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

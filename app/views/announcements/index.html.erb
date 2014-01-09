@@ -1,0 +1,15 @@
+<h1>Listing announcements</h1>
+
+<% @announcements.each do |announcement| %>
+  <% case announcement.source
+     when "twitter" %>
+  <%= render "shared/twitter_announcement", announcement %>
+  <% when "facebook" %>
+  <%= render "shared/facebook_announcement", announcement %>
+  <% when "internal" %>
+  <%= render "shared/internal_announcement", announcement %>
+  <% end %>
+  <pre> <%= announcement.source %> </pre>
+<% end %>
+
+<%= link_to 'New Announcement', new_announcement_path %>
