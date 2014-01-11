@@ -13,6 +13,8 @@ gem 'devise'
 gem 'nokogiri'
 # for pagination
 gem "kaminari"
+# for twitter support
+gem "twitter"
 
 group :doc do
   gem 'sdoc', require: false
