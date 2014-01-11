@@ -2,6 +2,7 @@
   <% if announcement.title.present? %>
     <h4> <%= announcement.title %> </h4>
   <% end %>
+  <%= image_tag "Twitter_logo_blue.png", size: "50x50" %>
   <div class = "announcement-body" >
     <%= announcement.message %>
   </div>

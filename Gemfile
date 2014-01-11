@@ -12,9 +12,11 @@ gem 'spreadsheet'
 gem 'devise'
 gem 'nokogiri'
 # for pagination
-gem "kaminari"
+gem 'kaminari'
 # for twitter support
-gem "twitter"
+gem 'twitter'
+# background syncing with twitter
+gem 'delayed_job_active_record'
 
 group :doc do
   gem 'sdoc', require: false

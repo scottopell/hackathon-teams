@@ -5,6 +5,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements.json
   def index
     @announcements = Announcement.all.page(params[:page]).per(50)
+    Announcement.delay.check_twitter
   end
 
   # GET /announcements/1
@@ -19,6 +20,7 @@ class AnnouncementsController < ApplicationController
 
   # GET /announcements/1/edit
   def edit
+    set_announcement
   end
 
   # POST /announcements
@@ -62,6 +64,7 @@ class AnnouncementsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_announcement
       @announcement = Announcement.find(params[:id])
@@ -69,6 +72,6 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params[:announcement]
+      params.require(:announcement).permit(:title, :message, :source, :url)
     end
 end
