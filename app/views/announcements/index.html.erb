@@ -3,13 +3,12 @@
 <% @announcements.each do |announcement| %>
   <% case announcement.source
      when "twitter" %>
-  <%= render "shared/twitter_announcement", announcement %>
+  <%= render "shared/twitter_announcement", announcement: announcement %>
   <% when "facebook" %>
-  <%= render "shared/facebook_announcement", announcement %>
+  <%= render "shared/facebook_announcement", announcement: announcement %>
   <% when "internal" %>
-  <%= render "shared/internal_announcement", announcement %>
+  <%= render "shared/internal_announcement", announcement: announcement %>
   <% end %>
-  <pre> <%= announcement.source %> </pre>
 <% end %>
 
 <%= link_to 'New Announcement', new_announcement_path %>
